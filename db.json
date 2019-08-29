@@ -1,15 +1,164 @@
 {
-    "posts": [{
-        "id": 1,
-        "title": "json-server",
-        "author": "typicode"
-    }],
-    "comments": [{
-        "id": 1,
-        "body": "some comment",
-        "postId": 1
-    }],
-    "profile": {
-        "name": "typicode"
+  "products": [
+    {
+      "id": 1,
+      "name": "Iphone 8 Plus",
+      "description": "O Apple iPhone 8 Plus é um dos smartphones iOS mais avançados e completos que existem em circulação. Tem um grande display de 5.5 polegadas com uma resolução de 1920x1080 pixel.",
+      "price": "3999,00",
+      "urlImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone8-select-2019-family?wid=882&amp;hei=1058&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1550795431127",
+      "stock": 4,
+      "brandId": 1,
+      "categoryId": 1
+		},
+		{
+      "id": 2,
+      "name": "Iphone 7 Plus",
+      "description": "O Apple iPhone 7 Plus é um dos smartphones iOS mais avançados e completos que existem em circulação. Tem um grande display de 5.5 polegadas com uma resolução de 1920x1080 pixel.",
+      "price": "2499,00",
+      "urlImage": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone7-select-2019-family?wid=882&amp;hei=1058&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1550795431127",
+      "stock": 4,
+      "brandId": 1,
+      "categoryId": 1
+		},
+		{
+      "id": 3,
+      "name": "Samsung S9",
+      "description": "O Samsung Galaxy S9 é um dos smartphones Android mais avançados e completos que existem em circulação. Tem um grande display de 5.8 polegadas e uma resolução de 2960x1440 pixels que é uma das mais altas atualmente em circulação.",
+      "price": "2099,00",
+      "urlImage": "https://images.samsung.com/is/image/samsung/br-galaxy-s9-sm-g960-vivo-sm-g9600zaszvv-frontgray-thumb-159045504?$PF_PRD_PNG$",
+      "stock": 3,
+      "brandId": 2,
+      "categoryId": 1
+		},
+		{
+      "id": 4,
+      "name": "Adidas ZX 4000 4D",
+      "description": "Os tênis da série ZX retomam a cena de corrida dos anos 80 com uma abordagem high-tech baseada em estudos da física do movimento humano.",
+      "price": "1299,00",
+      "urlImage": "https://assets.adidas.com/images/w_600,f_auto,q_auto/1f86a6a9ce2e4930bb1aaa3b01377f41_9366/Tenis_ZX_4000_4D_Amarelo_EF9623.jpg",
+      "stock": 9,
+      "brandId": 3,
+      "categoryId": 2
+		},
+		{
+      "id": 5,
+      "name": "Nike Air Max 270 React (Impressionism Art) Masculino",
+      "description": "Inspirado nas cores e texturas dos movimentos artísticos do último século, o Nike Air Max 270 React usa materiais leves em camadas para criar um design moderno cujo visual é tão bom quanto o toque.",
+      "price": "649,99",
+      "urlImage": "https://images.lojanike.com.br/500x500/produto/96521_760498_20190704113741.png",
+      "stock": 11,
+      "brandId": 4,
+      "categoryId": 2
+		},
+		{
+      "id": 6,
+      "name": "Nike Air Force 1 Masculino",
+      "description": "A lenda vive no Nike Air Force 1 '07, uma atualização moderna do icônico iconic que mistura o estilo clássico com detalhes novos.",
+      "price": "399,00",
+      "urlImage": "https://images.lojanike.com.br/500x500/produto/99839_780872_20190704201835.png",
+      "stock": 3,
+      "brandId": 4,
+      "categoryId": 3
+		},
+		{
+      "id": 7,
+      "name": "Casaco Adidas Originals ALLTIMERS",
+      "description": "A marca de skate Alltimers, com sede em Nova Iorque, toma como inspiração para esta blusa a coleção adidas Adventure dos anos 90.",
+      "price": "399,99",
+      "urlImage": "https://assets.adidas.com/images/w_600,h_600,f_auto,q_auto:sensitive,fl_lossy/ed79b602ed0743c884b1aa25014d24d0_9366/Blusa_Alltimers_Cinza_EC8683_01_laydown.jpg",
+      "stock": 7,
+      "brandId": 3,
+      "categoryId": 3
+    },
+		{
+      "id": 8,
+      "name": "Protein Crisp Body Size Integralmedica",
+      "description": "A nova barra Protein Crisp da linha Body Size Integralmedica, chegou para deixar a sua dieta ainda mais saudável. Composta por uma grande combinação de nutrientes, a barra Protein Crisp Integral Médica é uma das principais escolhas para os momentos de pré e pós treino.",
+      "price": "7,99",
+      "urlImage": "https://www.vitanutrition.com.br/media/catalog/product/cache/1/image/700x700/9df78eab33525d08d6e5fb8d27136e95/p/r/protein_crisp_unidade.jpg",
+      "stock": 7,
+      "brandId": 5,
+      "categoryId": 4
+    },
+		{
+      "id": 9,
+      "name": "Whey Gold Standard 5lbs 2.27kg - Optimum Nutrition (sabor: Chocolate)",
+      "description": "Promova o desenvolvimento da sua massa magra e tenha uma liado na busca dos objetivos com a ajuda do 100% Whey Gold Standard Optimum Nutrition. A rotina de treino não é nada fácil e muitas vezes desgastante. Por este motivo, conte com o auxílio deste whey protein optimun nutrition. Ele é composto por proteínas isoladas extraídas do soro do leite e pode ser tomado tanto antes quanto depois do treino.",
+      "price": "290,50",
+      "urlImage": "https://http://static.netshoes.com.br/produtos/whey-protein-iso-protein-2-kg-bodybuilders/99/E56-0303-799/E56-0303-799_zoom1.jpg",
+      "stock": 3,
+      "brandId": 6,
+      "categoryId": 4
+		},
+		{
+      "id": 10,
+      "name": "Nike Shox Nz Eu Masculino",
+      "description": "Referência no mercado esportivo e casual, a Nike é sinônimo de conforto, estilo e praticidade. Ao longo da história, a marca desenvolveu modelos que se tornaram verdadeiros ícones; um deles é o clássico e atemporal Nike Shox.",
+      "price": "489,90",
+      "urlImage": "http://static.netshoes.com.br/produtos/tenis-nike-shox-nz-eu-masculino/14/D12-9970-014/D12-9970-014_zoom1.jpg",
+      "stock": 13,
+      "brandId": 4,
+      "categoryId": 3
     }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Electronics",
+      "code": "ELECTRONICS"
+    },
+    {
+      "id": 2,
+      "name": "Sports & Fitness",
+      "code": "SPORTS_FITNESS"
+    },
+    {
+      "id": 3,
+      "name": "Clothing, Shoes & Accessories",
+      "code": "CLOTHING_SHOES_ACCESSORIES"
+    },
+    {
+      "id": 4,
+      "name": "Pharmacy, Health & Beauty",
+      "code": "PHARMACY_HEALTH_BEAUTY"
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "Apple",
+      "code": "APPLE",
+      "productsId": [1, 2]
+    },
+    {
+      "id": 2,
+      "name": "Samsung",
+      "code": "SAMSUNG",
+      "productsId": [3]
+    },
+    {
+      "id": 3,
+      "name": "Adidas",
+      "code": "ADIDAS",
+      "productsId": [4, 7]
+    },
+    {
+      "id": 4,
+      "name": "Nike",
+      "code": "NIKE",
+      "productsId": [5, 6, 10]
+    },
+    {
+      "id": 5,
+      "name": "Integral médica",
+      "code": "INTEGRALMEDICA",
+      "productsId": [8]
+		},
+		{
+      "id": 6,
+      "name": "Body Builders",
+      "code": "BODYBUILDERS",
+      "productsId": [9]
+		}
+  ]
 }

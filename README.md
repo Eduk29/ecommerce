@@ -15,22 +15,20 @@ $ npm install
 ```
 **2 -** Keep hacking! :metal:
 
-## Commands
+## Start Application
 
-In the project directory, you can run:
+1 - You need to start the JSON server to get access to a fake API. Open the terminal in project root directory and run the following instruction:
+```bash 
+json-server --watch db.json --port 3001
+```
+**This command terminal must be open during application execution.**
 
-### `npm start`
+2 - After the start the JSON server, you need to start the application. So, open another command terminal in the project root directory and run the following instruction:
+```bash
+npm start
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Developer :computer:
 
