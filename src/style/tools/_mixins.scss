@@ -1,0 +1,13 @@
+// Font Mixin
+@mixin typography-config($size: false, $line: false, $weight: false) {
+  font-family: "Roboto", sans-serif;
+  @if $size {
+    font-size: $size;
+  }
+  @if $line {
+    line-height: $line;
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
