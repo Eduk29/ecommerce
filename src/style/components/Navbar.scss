@@ -1,0 +1,32 @@
+@import "../settings/base";
+
+.ecommerce__navbar {
+  height: inherit;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 25px;
+}
+
+.ecommerce__navbar--brand {
+  font-family: "Dancing Script", cursive;
+  font-size: 24px;
+}
+
+.ecommerce__navbar--cart {
+  button {
+    border-radius: 20px;
+    padding: 5px 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  }
+  button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+}
