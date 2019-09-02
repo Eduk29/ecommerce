@@ -7,14 +7,26 @@
   justify-content: space-between;
   align-items: center;
   padding: 0px 25px;
+  height: 60px;
+  background-color: $color-primary-light;
+  color: $text-white;
 }
 
-.ecommerce__navbar--brand {
+.ecommerce__navbar-brand {
   font-family: "Dancing Script", cursive;
   font-size: 24px;
 }
 
-.ecommerce__navbar--cart {
+.ecommerce__navbar-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ecommerce__navbar-link-button {
+  font-size: 20px
+}
+
+.ecommerce__navbar-cart {
   button {
     background-color: transparent;
     border: none;
@@ -26,6 +38,7 @@
       box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
       border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   }
+
   button:hover {
     background-color: rgba(0, 0, 0, 0.08);
   }
