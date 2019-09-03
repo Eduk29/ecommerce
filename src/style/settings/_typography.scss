@@ -1,0 +1,61 @@
+@import "../tools/mixins.scss";
+
+// h1
+$h1-font-size: 96px;
+$h1-line-height: 96px;
+$h1-font-weigth: 300;
+
+// h2
+$h2-font-size: 60px;
+$h2-line-height: 60px;
+$h2-font-weigth: 300;
+
+// h3
+$h3-font-size: 48px;
+$h3-line-height: 48px;
+$h3-font-weigth: 400;
+
+// h4
+$h4-font-size: 34px;
+$h4-line-height: 34px;
+$h4-font-weigth: 400;
+
+// h5
+$h5-font-size: 24px;
+$h5-line-height: 24px;
+$h5-font-weigth: 400;
+
+// h6
+$h6-font-size: 20px;
+$h6-line-height: 20px;
+$h6-font-weigth: 500;
+
+// subtitle-1
+$subtitle-1-font-size: 16px;
+$subtitle-1-line-height: 16px;
+$subtitle-1-font-weigth: 400;
+
+// subtitle-2
+$subtitle-2font-size: 14px;
+$subtitle-2line-height: 14px;
+$subtitle-2font-weigth: 500;
+
+// body-1
+$body-1-font-size: 16px;
+$body-1-line-height: 16px;
+$body-1-font-weigth: 400;
+
+// body-2
+$body-2-font-size: 14px;
+$body-2-line-height: 14px;
+$body-2-font-weigth: 400;
+
+// button
+$button-font-size: 14px;
+$button-line-height: 14px;
+$button-font-weigth: 500;
+
+// caption
+$caption-font-size: 12px;
+$caption-line-height: 12px;
+$caption-font-weigth: 400;
