@@ -1,9 +1,13 @@
+// React
 import React from "react"
+
+// Styles
+import "../../style/components/ProductCard.scss"
 
 const ProductCard = () => {
   return (
-    <div>
-      <h1>Product 1</h1>
+    <div className="ecommerce__product-card">
+      <div className="ecommerce__product-card-image">Image</div>
     </div>
   )
 }
