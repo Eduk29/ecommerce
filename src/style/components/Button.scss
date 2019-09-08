@@ -45,3 +45,11 @@
     background-color: $color-secondary-dark;
   }
 }
+
+.default {
+  background-color: transparent;
+  color: $text-black;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+}
