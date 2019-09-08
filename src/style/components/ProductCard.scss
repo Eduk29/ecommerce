@@ -34,9 +34,45 @@
 }
 
 .ecommerce__product-card-data-price {
+  margin-top: 10px;
   @include typography-config(
     $subtitle-2-font-size,
     $subtitle-2-line-height,
     $subtitle-2-font-weigth
+  );
+}
+
+.ecommerce__product-card-footer-button {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  padding: 10px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+}
+
+.ecommerce__product-card-footer {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  margin: -35px 0px 0px 0px;
+  padding: 0px 10px 5px 0px;
+}
+
+.ecommerce__product-card-footer-add-cart-footer-button-label {
+  margin: 0px;
+  margin-left: 5px;
+  @include typography-config(
+    $body-2-font-size,
+    $body-2-line-height,
+    $body-2-font-weigth
   );
 }
