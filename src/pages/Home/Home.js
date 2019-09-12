@@ -6,7 +6,7 @@ import "../../style/pages/Home.scss"
 
 // Components
 import Navbar from "../../components/Navbar"
-import ProductCard from "../../components/ProductCard"
+import ItemList from "../../containers/ItemList/ItemList"
 
 const Home = () => {
   return (
@@ -18,7 +18,7 @@ const Home = () => {
       </div>
       <div className="ecommerce__home-main">
         <h1>Main</h1>
-        <ProductCard />
+        <ItemList />
       </div>
     </div>
   )
