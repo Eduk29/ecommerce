@@ -16,7 +16,9 @@
 }
 
 .ecommerce__product-card-data-name {
-  padding: 10px 0px;
+  max-height: 24px;
+  overflow: hidden;
+  margin: 10px 0px;
   @include typography-config(
     $subtitle-1-font-size,
     $subtitle-1-line-height,
@@ -25,6 +27,9 @@
 }
 
 .ecommerce__product-card-data-description {
+  max-height: 115px;
+  height: 115px;
+  overflow: hidden;
   padding: 0px 0px 10px 0px;
   @include typography-config(
     $caption-font-size,
@@ -36,9 +41,9 @@
 .ecommerce__product-card-data-price {
   margin-top: 10px;
   @include typography-config(
-    $subtitle-2-font-size,
-    $subtitle-2-line-height,
-    $subtitle-2-font-weigth
+    $subtitle-1-font-size,
+    $subtitle-1-line-height,
+    $subtitle-1-font-weigth
   );
 }
 
@@ -63,16 +68,6 @@
   display: flex;
   flex-flow: row;
   justify-content: flex-end;
-  margin: -35px 0px 0px 0px;
+  margin: -40px 0px 0px 0px;
   padding: 0px 10px 5px 0px;
-}
-
-.ecommerce__product-card-footer-add-cart-footer-button-label {
-  margin: 0px;
-  margin-left: 5px;
-  @include typography-config(
-    $body-2-font-size,
-    $body-2-line-height,
-    $body-2-font-weigth
-  );
 }
