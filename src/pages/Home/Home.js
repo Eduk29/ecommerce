@@ -11,11 +11,11 @@ import ItemList from "../../containers/ItemList/ItemList"
 const Home = () => {
   return (
     <div className="ecommerce__home">
-      <div className="ecommerce__home-header">
+      <header className="ecommerce__home-header">
         <div className="ecommerce__home-header-navbar">
           <Navbar />
         </div>
-      </div>
+      </header>
       <div className="ecommerce__home-main">
         <ItemList />
       </div>
