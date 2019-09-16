@@ -10,15 +10,6 @@ import * as ProductService from "../../services/Products/ProductService"
 // Styles
 import "../../style/containers/ItemList.scss"
 
-// const product = {
-//   name: "Tênis Adidas",
-//   imageUrl:
-//     "https://imgcentauro-a.akamaihd.net/900x900/93008651/tenis-adidas-baseline-k-infantil-img.jpg",
-//   description:
-//     "O melhor e mais moderno tênis da atualidade. Seu design em couro garante um bem estar durante o seu uso.",
-//   price: "R$ 22.00",
-// }
-
 const ItemList = () => {
   const [products, setProducts] = useState([])
 
