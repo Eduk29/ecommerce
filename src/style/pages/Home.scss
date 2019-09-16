@@ -1,0 +1,16 @@
+@import "../settings/base";
+
+.ecommerce__home {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.ecommerce__home-header {
+  width: 100%;
+}
+
+.ecommerce__home-main {
+  width: 1280px;
+  margin: 0px 20px;
+}
