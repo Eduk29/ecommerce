@@ -21,11 +21,15 @@ const ItemList = () => {
     getAllProducts()
   }, [])
 
+  const handleClickAddToCart = () => {
+    console.log("Cliquei no add to cart")
+  }
+
   return (
     <div className="ecommerce__item-list-container">
       {products.map(product => (
         <div key={product.id} className="ecommerce_item-list--item">
-          <ProductCard product={product} />
+          <ProductCard handleClick={handleClickAddToCart} product={product} />
         </div>
       ))}
     </div>

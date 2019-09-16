@@ -9,7 +9,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import "../../style/components/ProductCard.scss"
 import Button from "../Button/Button"
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, handleClick }) => {
   return (
     <div className="ecommerce__product-card">
       <img
@@ -28,11 +28,12 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="ecommerce__product-card-footer">
         <Button
-          label="Add to Cart"
-          icon={<FontAwesomeIcon icon={faPlus} size="sm" />}
-          iconPosition="left"
           borderRadius={25}
           color="default"
+          handleClick={handleClick}
+          icon={<FontAwesomeIcon icon={faPlus} size="sm" />}
+          iconPosition="left"
+          label="Add to Cart"
         />
       </div>
     </div>
