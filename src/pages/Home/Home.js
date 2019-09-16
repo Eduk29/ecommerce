@@ -17,7 +17,6 @@ const Home = () => {
         </div>
       </div>
       <div className="ecommerce__home-main">
-        <h1>Main</h1>
         <ItemList />
       </div>
     </div>
