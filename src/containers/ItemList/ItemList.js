@@ -32,13 +32,11 @@ const ItemList = () => {
 
   return (
     <div className="ecommerce__item-list-container">
-      {products.map(product => {
-        return (
-          <div key={product.id} className="ecommerce_item-list--item">
-            <ProductCard product={product} />
-          </div>
-        )
-      })}
+      {products.map(product => (
+        <div key={product.id} className="ecommerce_item-list--item">
+          <ProductCard product={product} />
+        </div>
+      ))}
     </div>
   )
 }
