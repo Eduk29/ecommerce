@@ -4,9 +4,15 @@ import initialState from "../states"
 const cartReducer = (state = initialState.cart, action) => {
   switch (action.type) {
     case SET_CART:
-      console.log("Action: ", action)
-      console.log("State: ", state)
-      return null
+      return {
+        products: [
+          ...state.products,
+          {
+            item: action.payload,
+            qtd: 1,
+          },
+        ],
+      }
 
     default:
       return state
