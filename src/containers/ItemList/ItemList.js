@@ -2,11 +2,16 @@
 import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 
+// Font Awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPlus } from "@fortawesome/free-solid-svg-icons"
+
 // Actions
 import { setCart } from "../../store/actions"
 
 // Components
 import ProductCard from "../../components/ProductCard"
+import Button from "../../components/Button"
 
 // Services
 import * as ProductService from "../../services/Products/ProductService"
@@ -27,7 +32,6 @@ const ItemList = props => {
 
   const handleClickAddToCart = product => {
     console.log("Cliquei no add to cart")
-    console.log("Product: ", product)
     props.dispatchSetCart(product)
   }
 
@@ -35,21 +39,31 @@ const ItemList = props => {
     <div className="ecommerce__item-list-container">
       {products.map(product => (
         <div key={product.id} className="ecommerce_item-list--item">
-          <ProductCard
-            handleClick={() => handleClickAddToCart(product)}
-            product={product}
-          />
+          <ProductCard product={product}>
+            <Button
+              borderRadius={25}
+              color="default"
+              handleClick={() => handleClickAddToCart(product)}
+              icon={<FontAwesomeIcon icon={faPlus} size="sm" />}
+              iconPosition="left"
+              label="Add to Cart"
+            />
+          </ProductCard>
         </div>
       ))}
     </div>
   )
 }
 
+const mapStateToProps = state => ({
+  cart: state.cart,
+})
+
 const mapDispatchToProps = dispatch => ({
   dispatchSetCart: data => dispatch(setCart(data)),
 })
 
 export default connect(
-  undefined,
+  mapStateToProps,
   mapDispatchToProps
 )(ItemList)
