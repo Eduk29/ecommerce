@@ -2,24 +2,49 @@ import { SET_CART } from "../types"
 import initialState from "../states"
 
 const cartReducer = (state = initialState.cart, action) => {
+  const newProductToCart = {
+    id: null,
+    amount: null,
+    item: null,
+  }
+
+  let newState = {}
+
+  const hasItemInArray = () => {
+    return state.products.find(product => product.item.id === action.payload.id)
+  }
+
   switch (action.type) {
     case SET_CART:
-      console.log("Action: ", action.payload)
-      // state.products.map(product => {
-      //   console.log("Product: ", product)
+      if (hasItemInArray()) {
+        const { products } = state
+        products.forEach((product, index) => {
+          if (product.item.id === action.payload.id) {
+            products[index].amount += 1
+          }
+        })
 
-      //   // if (product.id === ac)
-      // })
+        newState = {
+          products: [...state.products],
+        }
+      } else {
+        newProductToCart.id = state.products.length + 1
+        newProductToCart.amount = 1
+        newProductToCart.item = action.payload
 
-      return {
-        products: [
-          ...state.products,
-          {
-            item: action.payload,
-            qtd: 1,
-          },
-        ],
+        newState = {
+          products: [...state.products, newProductToCart],
+        }
       }
+
+      return newState
+
+    // state.products.map((product, index) => {
+    //   if (product.item.id === action.payload.id) {
+    //     console.log("Item ja no array")
+    //     state.products[index].amount = +1
+    //   }
+    // })
 
     default:
       return state
