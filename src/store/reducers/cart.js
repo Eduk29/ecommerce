@@ -1,20 +1,27 @@
-/* eslint-disable no-else-return */
 import { SET_CART } from "../types"
 import initialState from "../states"
 
-const hasItemInArray = (array, item) => {
-  return array.find(product => product.item.id === item)
+const hasItemInArray = (array, id) => {
+  return array.find(product => product.item.id === id)
+}
+
+const updateArrayWithNewState = (products, payload) => {
+  return products.map(product => {
+    if (product.item.id === payload.id) {
+      return { ...product, amount: product.amount + 1 }
+    }
+    return product
+  })
 }
 
 const cartReducer = (state = initialState.cart, action) => {
   const { products } = state
+  const { payload, type } = action
 
-  switch (action.type) {
+  switch (type) {
     case SET_CART:
-      if (hasItemInArray(products, action.payload.id)) {
-        const itemToUpdate = hasItemInArray(products, action.payload.id)
-        itemToUpdate.amount += 1
-        return { products: [...products] }
+      if (hasItemInArray(products, payload.id)) {
+        return { products: updateArrayWithNewState(products, payload) }
       }
 
       return {
@@ -23,7 +30,7 @@ const cartReducer = (state = initialState.cart, action) => {
           {
             id: products.length + 1,
             amount: 1,
-            item: action.payload,
+            item: payload,
           },
         ],
       }
