@@ -21,9 +21,15 @@ const optionsList = [
 
 const TestComponents = () => {
   return (
-    <div>
-      <InputSelect optionsList={optionsList} />
-    </div>
+    <form>
+      <InputSelect
+        disabled={false}
+        label="Choose One: "
+        optionsList={optionsList}
+        required
+        value={optionsList[1].value}
+      />
+    </form>
   )
 }
 

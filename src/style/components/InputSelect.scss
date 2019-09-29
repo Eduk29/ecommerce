@@ -1,6 +1,10 @@
 @import "../settings/base";
 
-.ecommerce__input-select {
+.ecommerce__select-label {
+  margin: 0px;
+}
+
+.ecommerce__select-input {
   border: none;
   border-top: 0px;
   border-left: 0px;
@@ -8,6 +12,5 @@
   border-bottom: 1px;
   border-style: solid;
   border-radius: 0px;
-  margin: 50px;
   width: 25%;
 }
