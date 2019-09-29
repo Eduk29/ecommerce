@@ -5,11 +5,15 @@ import React from "react"
 import "../../style/components/InputSelect.scss"
 
 const InputSelect = props => {
-  const { disabled, label, optionsList, required, value } = props
-
-  const handleSelect = event => {
-    console.log("Event: ", event.target.value)
-  }
+  const {
+    disabled,
+    handleSelectOption,
+    label,
+    optionsList,
+    readOnly,
+    required,
+    value,
+  } = props
 
   const displayHiddenLabelOption = () => {
     if (label) {
@@ -26,27 +30,34 @@ const InputSelect = props => {
     )
   }
 
+  const displayReadOnlyModifier = () => {
+    if (readOnly) {
+      return "--readonly"
+    }
+    return ""
+  }
+
   return (
     <div className="ecommerce__select">
       <label htmlFor="selectInput" className="ecommerce__select-label">
         {label}
-        <select
-          name="input-select"
-          className="ecommerce__select-input"
-          defaultValue={value}
-          disabled={disabled}
-          id="selectInput"
-          onChange={handleSelect}
-          required={required}
-        >
-          {displayHiddenLabelOption()}
-          {optionsList.map(option => (
-            <option key={option.id} value={option.value}>
-              {option.key}
-            </option>
-          ))}
-        </select>
       </label>
+      <select
+        name="input-select"
+        className={`ecommerce__select-input${displayReadOnlyModifier()}`}
+        defaultValue={value}
+        disabled={disabled}
+        id="selectInput"
+        onChange={handleSelectOption}
+        required={required}
+      >
+        {displayHiddenLabelOption()}
+        {optionsList.map(option => (
+          <option key={option.id} value={option.value}>
+            {option.key}
+          </option>
+        ))}
+      </select>
     </div>
   )
 }

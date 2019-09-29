@@ -1,7 +1,13 @@
 @import "../settings/base";
 
+.ecommerce__select {
+  width: 100%;
+}
+
 .ecommerce__select-label {
   margin: 0px;
+  margin-right: 5px;
+  width: 40%;
 }
 
 .ecommerce__select-input {
@@ -12,5 +18,19 @@
   border-bottom: 1px;
   border-style: solid;
   border-radius: 0px;
-  width: 25%;
+  width: 60%;
+}
+
+.ecommerce__select-input--readonly {
+  border: none;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px;
+  border-style: solid;
+  border-radius: 0px;
+  width: 60%;
+  background: #fafafa;
+  pointer-events: none;
+  touch-action: none;
 }

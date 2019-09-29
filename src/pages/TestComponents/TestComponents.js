@@ -20,12 +20,18 @@ const optionsList = [
 ]
 
 const TestComponents = () => {
+  const handleSelect = event => {
+    console.log("Selected Option: ", event.target.value)
+  }
+
   return (
-    <form>
+    <form style={{ width: "25%" }}>
       <InputSelect
         disabled={false}
+        handleSelectOption={handleSelect}
         label="Choose One: "
         optionsList={optionsList}
+        readOnly
         required
         value={optionsList[1].value}
       />
