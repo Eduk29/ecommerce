@@ -10,8 +10,9 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons"
 import { setCart } from "../../store/actions"
 
 // Components
-import ProductCard from "../../components/ProductCard"
 import Button from "../../components/Button"
+import FilterPanel from "../../components/FilterPanel"
+import ProductCard from "../../components/ProductCard"
 
 // Services
 import * as ProductService from "../../services/Products/ProductService"
@@ -37,20 +38,26 @@ const ItemList = props => {
 
   return (
     <div className="ecommerce__item-list-container">
-      {products.map(product => (
-        <div key={product.id} className="ecommerce_item-list--item">
-          <ProductCard product={product}>
-            <Button
-              borderRadius={25}
-              color="default"
-              handleClick={() => handleClickAddToCart(product)}
-              icon={<FontAwesomeIcon icon={faPlus} size="sm" />}
-              iconPosition="left"
-              label="Add to Cart"
-            />
-          </ProductCard>
-        </div>
-      ))}
+      <div className="ecommerce__item-list-container-filter-panel">
+        <FilterPanel />
+      </div>
+
+      <div className="ecommerce__item-list-container-results">
+        {products.map(product => (
+          <div key={product.id} className="ecommerce_item-list--item">
+            <ProductCard product={product}>
+              <Button
+                borderRadius={25}
+                color="default"
+                handleClick={() => handleClickAddToCart(product)}
+                icon={<FontAwesomeIcon icon={faPlus} size="sm" />}
+                iconPosition="left"
+                label="Add to Cart"
+              />
+            </ProductCard>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
