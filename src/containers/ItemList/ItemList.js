@@ -16,31 +16,112 @@ import ProductCard from "../../components/ProductCard"
 
 // Services
 import * as ProductService from "../../services/Products/ProductService"
+import * as BrandService from "../../services/Brands/BrandService"
+import * as CategoryService from "../../services/Categories/CategoryService"
 
 // Styles
 import "../../style/containers/ItemList.scss"
 
 const ItemList = props => {
   const [products, setProducts] = useState([])
+  const [brands, setBrands] = useState([])
+  const [categories, setCategories] = useState([])
+  const [selectedBrand, setSelectedBrand] = useState({})
+  const [selectedCategory, setSelectedCategory] = useState({})
 
   const getAllProducts = () => {
     ProductService.getAll().then(response => setProducts(response))
   }
 
-  useEffect(() => {
+  const getBrandsList = () => {
+    BrandService.getAll().then(response => setBrands(response))
+  }
+
+  const getCategoriesList = () => {
+    CategoryService.getAll().then(response => setCategories(response))
+  }
+
+  const getAllProductsByFilter = filters => {
+    ProductService.getAllByFilter(filters).then(response =>
+      setProducts(response)
+    )
+  }
+
+  const loadData = () => {
     getAllProducts()
+    getBrandsList()
+    getCategoriesList()
+  }
+
+  useEffect(() => {
+    return loadData()
   }, [])
 
+  const setFilterQuery = () => {
+    const filterList = []
+    let filterQuery = ""
+
+    if (selectedBrand && selectedBrand.id) {
+      const filter = `brandId=${selectedBrand.id}`
+      filterList.push(filter)
+    }
+
+    if (selectedCategory && selectedCategory.id) {
+      const filter = `categoryId=${selectedCategory.id}`
+      filterList.push(filter)
+    }
+
+    filterList.forEach(item => {
+      if (filterQuery === "") {
+        filterQuery = item
+      } else {
+        filterQuery = `${filterQuery}&${item}`
+      }
+    })
+
+    return filterQuery
+  }
+
   const handleClickAddToCart = product => {
-    console.log("Cliquei no add to cart")
     props.dispatchSetCart(product)
+  }
+
+  const handleClickFilter = event => {
+    event.preventDefault()
+    getAllProductsByFilter(setFilterQuery())
+  }
+
+  const handleChangeBrandFilter = event => {
+    const selected = brands.filter(item => item.value === event.target.value)
+    setSelectedBrand(selected[0])
+  }
+
+  const handleChangeCategoryFilter = event => {
+    const selected = categories.filter(
+      item => item.value === event.target.value
+    )
+    setSelectedCategory(selected[0])
+  }
+
+  const displayFilterPainel = () => {
+    return brands && categories
   }
 
   return (
     <div className="ecommerce__item-list-container">
-      <div className="ecommerce__item-list-container-filter-panel">
-        <FilterPanel />
-      </div>
+      {displayFilterPainel() && (
+        <div className="ecommerce__item-list-container-filter-panel">
+          <FilterPanel
+            brands={brands}
+            categories={categories}
+            handleChangeBrandFilter={handleChangeBrandFilter}
+            handleChangeCategoryFilter={handleChangeCategoryFilter}
+            handleClickFilter={handleClickFilter}
+            selectedBrand={selectedBrand}
+            selectedCategory={selectedCategory}
+          />
+        </div>
+      )}
 
       <div className="ecommerce__item-list-container-results">
         {products.map(product => (

@@ -1,10 +1,25 @@
 @import "../settings/base";
 
+.ecommerce__item-list-container {
+  display: flex;
+  flex-flow: column;
+  margin: 20px 0px;
+  align-items: center;
+}
+
+.ecommerce__item-list-container-filter-panel {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 20px;
+  width: 980px;
+}
+
 .ecommerce__item-list-container-results {
   display: flex;
-  width: 1060px;
-  margin: auto;
   flex-wrap: wrap;
+  margin: auto;
+  width: 1060px;
 }
 
 .ecommerce_item-list--item {
