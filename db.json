@@ -104,23 +104,23 @@
   "categories": [
     {
       "id": 1,
-      "name": "Electronics",
-      "code": "ELECTRONICS"
+      "value": "Electronics",
+      "key": "ELECTRONICS"
     },
     {
       "id": 2,
-      "name": "Sports & Fitness",
-      "code": "SPORTS_FITNESS"
+      "value": "Sports & Fitness",
+      "key": "SPORTS_FITNESS"
     },
     {
       "id": 3,
-      "name": "Clothing, Shoes & Accessories",
-      "code": "CLOTHING_SHOES_ACCESSORIES"
+      "value": "Clothing, Shoes & Accessories",
+      "key": "CLOTHING_SHOES_ACCESSORIES"
     },
     {
       "id": 4,
-      "name": "Pharmacy, Health & Beauty",
-      "code": "PHARMACY_HEALTH_BEAUTY"
+      "value": "Pharmacy, Health & Beauty",
+      "key": "PHARMACY_HEALTH_BEAUTY"
     }
   ],
   "brands": [
