@@ -5,3 +5,9 @@ export const getAll = () => {
     .then(response => response.json())
     .then(body => body)
 }
+
+export const getAllByFilter = filters => {
+  return fetch(`${APIBaseURL}/products/?${filters}`)
+    .then(response => response.json())
+    .then(body => body)
+}
