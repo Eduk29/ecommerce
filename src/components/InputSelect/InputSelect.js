@@ -53,8 +53,8 @@ const InputSelect = props => {
       >
         {displayHiddenLabelOption()}
         {optionsList.map(option => (
-          <option key={option.id} value={option.value}>
-            {option.key}
+          <option key={option.key} value={option.value}>
+            {option.value}
           </option>
         ))}
       </select>
