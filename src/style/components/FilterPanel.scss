@@ -1,0 +1,23 @@
+@import "../settings/base";
+
+.ecommerce__filter-panel {
+  align-items: center;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.ecommerce__filter-panel-brands {
+  width: 40%;
+}
+
+.ecommerce__filter-panel-category {
+  width: 40%;
+}
+
+.ecommerce__filter-panel-button {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0px 40px;
+}
