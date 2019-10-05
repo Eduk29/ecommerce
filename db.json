@@ -126,38 +126,38 @@
   "brands": [
     {
       "id": 1,
-      "name": "Apple",
-      "code": "APPLE",
+      "value": "Apple",
+      "key": "APPLE",
       "productsId": [1, 2]
     },
     {
       "id": 2,
-      "name": "Samsung",
-      "code": "SAMSUNG",
+      "value": "Samsung",
+      "key": "SAMSUNG",
       "productsId": [3]
     },
     {
       "id": 3,
-      "name": "Adidas",
-      "code": "ADIDAS",
+      "value": "Adidas",
+      "key": "ADIDAS",
       "productsId": [4, 7]
     },
     {
       "id": 4,
-      "name": "Nike",
-      "code": "NIKE",
+      "value": "Nike",
+      "key": "NIKE",
       "productsId": [5, 6, 10]
     },
     {
       "id": 5,
-      "name": "Integral médica",
-      "code": "INTEGRALMEDICA",
+      "value": "Integral médica",
+      "key": "INTEGRALMEDICA",
       "productsId": [8]
     },
     {
       "id": 6,
-      "name": "Body Builders",
-      "code": "BODYBUILDERS",
+      "value": "Body Builders",
+      "key": "BODYBUILDERS",
       "productsId": [9]
     }
   ]
