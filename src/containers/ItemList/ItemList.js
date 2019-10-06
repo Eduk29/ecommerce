@@ -47,14 +47,13 @@ const ItemList = props => {
     )
   }
 
-  const loadData = () => {
-    getAllProducts()
-    getBrandsList()
-    getCategoriesList()
-  }
-
   useEffect(() => {
-    return loadData()
+    const loadData = () => {
+      getAllProducts()
+      getBrandsList()
+      getCategoriesList()
+    }
+    loadData()
   }, [])
 
   const setFilterQuery = () => {
@@ -104,7 +103,7 @@ const ItemList = props => {
   }
 
   const displayFilterPainel = () => {
-    return brands && categories
+    return brands.length > 0 && categories.length > 0
   }
 
   return (
