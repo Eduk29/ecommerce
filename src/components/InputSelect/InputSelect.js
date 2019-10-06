@@ -16,21 +16,6 @@ const InputSelect = props => {
     value,
   } = props
 
-  const displayHiddenLabelOption = () => {
-    if (label) {
-      return (
-        <option value="" hidden>
-          {" "}
-        </option>
-      )
-    }
-    return (
-      <option value="" hidden>
-        Choose one
-      </option>
-    )
-  }
-
   const displayAllOption = () => {
     const hasAllInArray = optionsList.findIndex(item => item.id === 0)
 
@@ -42,6 +27,17 @@ const InputSelect = props => {
       }
       optionsList.unshift(allOption)
     }
+  }
+
+  const displayHiddenLabelOption = () => {
+    if (label) {
+      return displayAllOption()
+    }
+    return (
+      <option value="" hidden>
+        Choose one
+      </option>
+    )
   }
 
   const displayReadOnlyModifier = () => {
