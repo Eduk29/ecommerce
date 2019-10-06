@@ -11,12 +11,10 @@
 }
 
 .ecommerce__select-input {
-  border: none;
-  border-top: 0px;
-  border-left: 0px;
-  border-right: 0px;
-  border-bottom: 1px;
-  border-style: solid;
+  border-top: 0px solid $text-black;
+  border-left: 0px solid $text-black;
+  border-right: 0px solid $text-black;
+  border-bottom: 1px solid $text-black;
   border-radius: 0px;
   width: 60%;
   background-color: #fafafa;
