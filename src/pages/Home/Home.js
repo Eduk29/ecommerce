@@ -1,5 +1,6 @@
 // React
 import React from "react"
+import { connect } from "react-redux"
 
 // Style
 import "../../style/pages/Home.scss"
@@ -8,12 +9,15 @@ import "../../style/pages/Home.scss"
 import Navbar from "../../components/Navbar"
 import ItemList from "../../containers/ItemList/ItemList"
 
-const Home = () => {
+const Home = ({ ...props }) => {
+  const { cart } = props
+
+  console.log("Cart: ", cart.products.length)
   return (
     <div className="ecommerce__home">
       <header className="ecommerce__home-header">
         <div className="ecommerce__home-header-navbar">
-          <Navbar />
+          <Navbar badgeData={cart.products.length} />
         </div>
       </header>
       <div className="ecommerce__home-main">
@@ -23,4 +27,11 @@ const Home = () => {
   )
 }
 
-export default Home
+const mapStateToProps = state => ({
+  cart: state.cart,
+})
+
+export default connect(
+  mapStateToProps,
+  undefined
+)(Home)
