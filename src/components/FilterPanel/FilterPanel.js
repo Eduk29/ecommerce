@@ -26,6 +26,7 @@ const FilterPanel = ({
       <div className="ecommerce__filter-panel-brands">
         {displayBrandsFilter() && (
           <InputSelect
+            hasAllOption
             handleSelectOption={handleChangeBrandFilter}
             label="Brands: "
             optionsList={brands}
@@ -36,6 +37,7 @@ const FilterPanel = ({
       <div className="ecommerce__filter-panel-category">
         {displayCategoriesFilter() && (
           <InputSelect
+            hasAllOption
             handleSelectOption={handleChangeCategoryFilter}
             label="Categories: "
             optionsList={categories}

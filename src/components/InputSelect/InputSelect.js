@@ -7,6 +7,7 @@ import "../../style/components/InputSelect.scss"
 const InputSelect = props => {
   const {
     disabled,
+    hasAllOption,
     handleSelectOption,
     label,
     optionsList,
@@ -28,6 +29,19 @@ const InputSelect = props => {
         Choose one
       </option>
     )
+  }
+
+  const displayAllOption = () => {
+    const hasAllInArray = optionsList.findIndex(item => item.id === 0)
+
+    if (hasAllOption && hasAllInArray) {
+      const allOption = {
+        id: 0,
+        value: "All",
+        key: "ALL",
+      }
+      optionsList.unshift(allOption)
+    }
   }
 
   const displayReadOnlyModifier = () => {
@@ -52,6 +66,7 @@ const InputSelect = props => {
         required={required}
       >
         {displayHiddenLabelOption()}
+        {displayAllOption()}
         {optionsList.map(option => (
           <option key={option.key} value={option.value}>
             {option.value}
