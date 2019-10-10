@@ -4,6 +4,10 @@ import { connect } from "react-redux"
 
 // Components
 import Navbar from "../../components/Navbar"
+import Table from "../../components/Table"
+
+// Style
+import "../../style/pages/Cart.scss"
 
 const Cart = ({ ...props }) => {
   const { cart } = props
@@ -13,7 +17,11 @@ const Cart = ({ ...props }) => {
         <Navbar badgeData={cart.products.length} />
       </div>
       <div className="ecommerce__cart-main">
-        <h1> Page Cart </h1>
+        <div className="ecommerce__cart-main-table">
+          {" "}
+          <Table />{" "}
+        </div>
+        <div className="ecommerce__cart-main-summary"> Summary </div>
       </div>
     </div>
   )
