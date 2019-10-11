@@ -9,6 +9,8 @@ import Table from "../../components/Table"
 // Style
 import "../../style/pages/Cart.scss"
 
+const columns = ["Product", "Quantity", "Price", "Actions"]
+
 const Cart = ({ ...props }) => {
   const { cart } = props
   return (
@@ -18,8 +20,7 @@ const Cart = ({ ...props }) => {
       </div>
       <div className="ecommerce__cart-main">
         <div className="ecommerce__cart-main-table">
-          {" "}
-          <Table />{" "}
+          <Table columns={columns} products={cart.products} />
         </div>
         <div className="ecommerce__cart-main-summary"> Summary </div>
       </div>
