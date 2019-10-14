@@ -12,7 +12,6 @@ import ItemList from "../../containers/ItemList/ItemList"
 const Home = ({ ...props }) => {
   const { cart } = props
 
-  console.log("Cart: ", cart.products.length)
   return (
     <div className="ecommerce__home">
       <header className="ecommerce__home-header">

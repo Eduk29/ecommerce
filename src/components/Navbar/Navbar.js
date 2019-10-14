@@ -27,21 +27,21 @@ const Navbar = ({ badgeData }) => {
               color="primary"
               label={badgeData}
               labelFontSize="16"
-              labelPaddingX="4"
+              labelPaddingX="2"
               labelPaddingY="8"
             />
           </div>
         )}
         <div className="ecommerce__navbar-cart-button">
-          <button type="button">
-            <Link to="/cart" className="ecommerce__navbar-link">
+          <Link to="/cart" className="ecommerce__navbar-link">
+            <button type="button">
               <FontAwesomeIcon
                 className="ecommerce__navbar-link-button"
                 icon={faShoppingCart}
                 size="lg"
               />
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </div>
     </div>
