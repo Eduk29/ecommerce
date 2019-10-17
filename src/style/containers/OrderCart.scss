@@ -1,0 +1,43 @@
+@import "../settings/base";
+
+.ecommerce__order-cart-container {
+  display: flex;
+  flex-flow: row;
+  margin: 20px 0px;
+}
+
+.ecommerce__order-cart-container-order-summary {
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  margin-right: 2%;
+  padding: 15px;
+  width: 64%;
+}
+
+.ecommerce__order-cart-container-customer-information {
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 34%;
+}
+
+.ecommerce__order-cart-container-order-summary--empty-cart {
+  text-align: center;
+  @include typography-config(
+    $body-2-font-size,
+    $body-2-line-height,
+    $body-2-font-weigth
+  );
+}
+
+.ecommerce__order-cart-container-order-summary--filled-cart {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.ecommerce__order-cart-container-order-summary--filled-cart-title {
+  @include typography-config(
+    $title-font-size,
+    $title-line-height,
+    $title-font-weigth
+  );
+}
