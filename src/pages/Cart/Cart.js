@@ -4,25 +4,20 @@ import { connect } from "react-redux"
 
 // Components
 import Navbar from "../../components/Navbar"
-import Table from "../../components/Table"
+import OrderCart from "../../containers/orderCart/orderCart"
 
 // Style
 import "../../style/pages/Cart.scss"
-
-const columns = ["Product", "Quantity", "Price", "Actions"]
 
 const Cart = ({ ...props }) => {
   const { cart } = props
   return (
     <div className="ecommerce__cart">
-      <div className="ecommerce__cart-navbar">
+      <header className="ecommerce__cart-header">
         <Navbar badgeData={cart.products.length} />
-      </div>
+      </header>
       <div className="ecommerce__cart-main">
-        <div className="ecommerce__cart-main-table">
-          <Table columns={columns} products={cart.products} />
-        </div>
-        <div className="ecommerce__cart-main-summary"> Summary </div>
+        <OrderCart cart={cart} />
       </div>
     </div>
   )
