@@ -1,8 +1,13 @@
+// React
 import React from "react"
+
+// Styles
+import "../../style/components/InputText.scss"
 
 const InputText = ({
   disabled = false,
   label = "Default Label",
+  handleChange,
   readonly = false,
   required = false,
   value = "Default Value",
@@ -13,6 +18,7 @@ const InputText = ({
       <input
         className="ecommerce__input-text-input"
         disabled={disabled}
+        onChange={handleChange}
         readOnly={readonly}
         required={required}
         type="text"
