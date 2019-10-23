@@ -16,9 +16,10 @@ const InputText = ({
     <div className="ecommerce__input-text">
       <div className="ecommerce__input-text-label">{label}</div>
       <input
+        id={`input-${label.toLowerCase()}`}
         className="ecommerce__input-text-input"
         disabled={disabled}
-        onChange={handleChange}
+        onChange={event => handleChange(event, label.toLowerCase())}
         readOnly={readonly}
         required={required}
         type="text"

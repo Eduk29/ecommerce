@@ -8,13 +8,17 @@ import InputText from "../InputText/InputText"
 import "../../style/components/CustomersInformation.scss"
 
 const CustomersInformation = () => {
+  const handleChange = (event, prop) => {
+    console.log(`${prop}: `, event.target.value)
+  }
+
   return (
     <div className="ecommerce__container-customers-information">
       <h4 className="ecommerce__container-customers-information-title">
         Delivery Information
       </h4>
       <div className="ecommerce__container-customers-information-name-input">
-        <InputText label="Name" />
+        <InputText label="Name" handleChange={handleChange} />
       </div>
       <div className="ecommerce__container-customers-information-row">
         <div className="ecommerce__container-customers-information-address-input">
