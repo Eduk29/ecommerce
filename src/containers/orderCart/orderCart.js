@@ -1,5 +1,6 @@
 // React
 import React, { useState } from "react"
+import { connect } from "react-redux"
 
 // Components
 import Table from "../../components/Table"
@@ -7,6 +8,7 @@ import CustomersInformation from "../../components/CustomersInformation/Customer
 
 // Styles
 import "../../style/containers/OrderCart.scss"
+import { setCustomer } from "../../store/actions"
 
 const columns = ["Product", "Quantity", "Price", "Actions"]
 
@@ -30,8 +32,7 @@ const OrderCart = props => {
   }
 
   const handleClick = () => {
-    console.log("Set Store State with: ", state)
-    // Set store state
+    props.dispatchSetCustomer(state)
   }
 
   return (
@@ -62,4 +63,16 @@ const OrderCart = props => {
   )
 }
 
-export default OrderCart
+const mapStateToProps = state => ({
+  cart: state.cart,
+  customer: state.customer,
+})
+
+const mapDispatchToProps = dispatch => ({
+  dispatchSetCustomer: data => dispatch(setCustomer(data)),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(OrderCart)

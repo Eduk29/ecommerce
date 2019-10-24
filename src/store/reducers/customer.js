@@ -2,12 +2,11 @@ import { SET_CUSTOMER } from "../types"
 import initialState from "../states"
 
 const customerReducer = (state = initialState.customer, action) => {
-  const { type } = action
+  const { payload, type } = action
 
   switch (type) {
     case SET_CUSTOMER:
-      console.log("Customer: ", state)
-      return state
+      return payload
 
     default:
       return state

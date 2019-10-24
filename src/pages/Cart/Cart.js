@@ -10,14 +10,14 @@ import OrderCart from "../../containers/orderCart/orderCart"
 import "../../style/pages/Cart.scss"
 
 const Cart = ({ ...props }) => {
-  const { cart, customer } = props
+  const { cart } = props
   return (
     <div className="ecommerce__cart">
       <header className="ecommerce__cart-header">
         <Navbar badgeData={cart.products.length} />
       </header>
       <div className="ecommerce__cart-main">
-        <OrderCart cart={cart} customer={customer} />
+        <OrderCart />
       </div>
     </div>
   )
@@ -25,7 +25,6 @@ const Cart = ({ ...props }) => {
 
 const mapStateToProps = state => ({
   cart: state.cart,
-  customer: state.customer,
 })
 
 export default connect(
