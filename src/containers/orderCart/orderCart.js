@@ -1,5 +1,5 @@
 // React
-import React from "react"
+import React, { useState } from "react"
 
 // Components
 import Table from "../../components/Table"
@@ -11,10 +11,27 @@ import "../../style/containers/OrderCart.scss"
 const columns = ["Product", "Quantity", "Price", "Actions"]
 
 const OrderCart = props => {
-  const { cart } = props
+  const { cart, customer } = props
+  const [state, setState] = useState(customer)
 
   const displayTable = () => {
     return cart.products.length > 0
+  }
+
+  const handleChange = event => {
+    const prop = event.target.id.slice(
+      event.target.id.indexOf("-") + 1,
+      event.target.id.length
+    )
+    setState({
+      ...state,
+      [prop]: event.target.value,
+    })
+  }
+
+  const handleClick = () => {
+    console.log("Set Store State with: ", state)
+    // Set store state
   }
 
   return (
@@ -35,7 +52,11 @@ const OrderCart = props => {
         )}
       </div>
       <div className="ecommerce__order-cart-container-customer-information">
-        <CustomersInformation />
+        <CustomersInformation
+          customer={state}
+          handleChange={handleChange}
+          handleClick={handleClick}
+        />
       </div>
     </div>
   )

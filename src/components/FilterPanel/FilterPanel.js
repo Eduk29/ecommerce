@@ -1,8 +1,12 @@
+// React
 import React from "react"
-import InputSelect from "../InputSelect/InputSelect"
 
-import "../../style/components/FilterPanel.scss"
+// Component
+import InputSelect from "../InputSelect/InputSelect"
 import Button from "../Button"
+
+// Styles
+import "../../style/components/FilterPanel.scss"
 
 const FilterPanel = ({
   brands,

@@ -6,6 +6,7 @@ import "../../style/components/InputText.scss"
 
 const InputText = ({
   disabled = false,
+  id = "default",
   label = "Default Label",
   handleChange,
   readonly = false,
@@ -16,10 +17,10 @@ const InputText = ({
     <div className="ecommerce__input-text">
       <div className="ecommerce__input-text-label">{label}</div>
       <input
-        id={`input-${label.toLowerCase()}`}
+        id={`input-${id}`}
         className="ecommerce__input-text-input"
         disabled={disabled}
-        onChange={event => handleChange(event, label.toLowerCase())}
+        onChange={handleChange}
         readOnly={readonly}
         required={required}
         type="text"
