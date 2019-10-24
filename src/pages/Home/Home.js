@@ -11,10 +11,14 @@ import "../../style/pages/Home.scss"
 
 const Home = ({ ...props }) => {
   const { cart } = props
+  const quantity = cart.products.reduce(
+    (acc, product) => acc + product.amount,
+    0
+  )
   return (
     <div className="ecommerce__home">
       <header className="ecommerce__home-header">
-        <Navbar badgeData={cart.products.length} />
+        <Navbar badgeData={quantity} />
       </header>
       <div className="ecommerce__home-main">
         <ItemList />
