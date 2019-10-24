@@ -23,7 +23,7 @@ const Table = props => {
       <tbody className="ecommerce__table-body">
         {products.map(product => {
           return (
-            <tr key={product} className="ecommerce__table-body-row">
+            <tr key={product.id} className="ecommerce__table-body-row">
               <td className="ecommerce__table-body-row-item--first-column">
                 {product.item.name}
               </td>
