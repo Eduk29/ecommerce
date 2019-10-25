@@ -1,6 +1,10 @@
 // React
 import React from "react"
 
+// Font Awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
+
 // Components
 
 // Styles
@@ -33,7 +37,17 @@ const Table = props => {
                 id="quantity-column"
                 className="ecommerce__table-body-row-item"
               >
+                <FontAwesomeIcon
+                  className="ecommerce__navbar-link-button"
+                  icon={faPlus}
+                  size="lg"
+                />
                 {product.amount}
+                <FontAwesomeIcon
+                  className="ecommerce__navbar-link-button"
+                  icon={faMinus}
+                  size="lg"
+                />
               </td>
               <td className="ecommerce__table-body-row-item">
                 R$ {product.item.price}
