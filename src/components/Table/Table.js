@@ -1,15 +1,14 @@
 // React
 import React from "react"
 
-// Font Awesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faTrash } from "@fortawesome/free-solid-svg-icons"
+// Components
+import InputText from "../InputText/InputText"
 
 // Styles
 import "../../style/components/Table.scss"
 
 const Table = props => {
-  const { columns, products } = props
+  const { columns, products, handleChangeAmount } = props
 
   return (
     <table className="ecommerce__table">
@@ -31,18 +30,18 @@ const Table = props => {
               <td className="ecommerce__table-body-row-item--first-column">
                 {product.item.name}
               </td>
-              <td className="ecommerce__table-body-row-item">
-                {product.amount}
+              <td
+                id="quantity-column"
+                className="ecommerce__table-body-row-item"
+              >
+                <InputText
+                  handleChange={event => handleChangeAmount(event, product)}
+                  id="amount"
+                  value={product.amount}
+                />
               </td>
               <td className="ecommerce__table-body-row-item">
                 R$ {product.item.price}
-              </td>
-              <td className="ecommerce__table-body-row-item">
-                <FontAwesomeIcon
-                  className="ecommerce__navbar-link-button"
-                  icon={faTrash}
-                  size="lg"
-                />
               </td>
             </tr>
           )

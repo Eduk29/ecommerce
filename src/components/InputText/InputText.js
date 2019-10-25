@@ -7,11 +7,11 @@ import "../../style/components/InputText.scss"
 const InputText = ({
   disabled = false,
   id = "default",
-  label = "Default Label",
+  label = "",
   handleChange,
   readonly = false,
   required = false,
-  value = "Default Value",
+  value = "",
 }) => {
   return (
     <div className="ecommerce__input-text">

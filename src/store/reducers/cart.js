@@ -1,4 +1,4 @@
-import { SET_CART } from "../types"
+import { SET_AMOUNT, SET_CART } from "../types"
 import initialState from "../states"
 
 const hasItemInArray = (array, id) => {
@@ -33,6 +33,11 @@ const cartReducer = (state = initialState.cart, action) => {
             item: payload,
           },
         ],
+      }
+
+    case SET_AMOUNT:
+      return {
+        products: payload.products,
       }
 
     default:

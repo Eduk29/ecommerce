@@ -1,5 +1,5 @@
 // React
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 
 // Components
@@ -8,13 +8,14 @@ import CustomersInformation from "../../components/CustomersInformation/Customer
 
 // Styles
 import "../../style/containers/OrderCart.scss"
-import { setCustomer } from "../../store/actions"
+import { setCustomer, setAmount } from "../../store/actions"
 
-const columns = ["Product", "Quantity", "Price", "Actions"]
+const columns = ["Product", "Quantity", "Price"]
 
 const OrderCart = props => {
-  const { cart, customer } = props
-  const [state, setState] = useState(customer)
+  const { state } = props
+  const [cart, setStateCart] = useState(state.cart)
+  const [customer, setStateCustomer] = useState(state.customer)
 
   const displayTable = () => {
     return cart.products.length > 0
@@ -25,14 +26,38 @@ const OrderCart = props => {
       event.target.id.indexOf("-") + 1,
       event.target.id.length
     )
-    setState({
-      ...state,
+    setStateCustomer({
+      ...customer,
       [prop]: event.target.value,
     })
   }
 
+  const updateArrayWithNewState = (products, payload, newAmount) => {
+    return products.map(product => {
+      if (product.item.id === payload.id) {
+        return { ...product, amount: newAmount }
+      }
+      return product
+    })
+  }
+
+  const handleChangeAmount = (event, product) => {
+    const newAmount = +event.target.value
+
+    const newState = updateArrayWithNewState(cart.products, product, newAmount)
+
+    setStateCart({
+      ...cart,
+      products: newState,
+    })
+  }
+
+  useEffect(() => {
+    props.dispatchSetAmount(cart)
+  }, [cart])
+
   const handleClick = () => {
-    props.dispatchSetCustomer(state)
+    props.dispatchSetCustomer(customer)
   }
 
   return (
@@ -43,7 +68,11 @@ const OrderCart = props => {
             <h4 className="ecommerce__order-cart-container-order-summary--filled-cart-title">
               Your products in cart
             </h4>
-            <Table columns={columns} products={cart.products} />
+            <Table
+              handleChangeAmount={handleChangeAmount}
+              columns={columns}
+              products={cart.products}
+            />
           </div>
         )}
         {!displayTable() && (
@@ -54,7 +83,7 @@ const OrderCart = props => {
       </div>
       <div className="ecommerce__order-cart-container-customer-information">
         <CustomersInformation
-          customer={state}
+          customer={customer}
           handleChange={handleChange}
           handleClick={handleClick}
         />
@@ -64,12 +93,12 @@ const OrderCart = props => {
 }
 
 const mapStateToProps = state => ({
-  cart: state.cart,
-  customer: state.customer,
+  state,
 })
 
 const mapDispatchToProps = dispatch => ({
   dispatchSetCustomer: data => dispatch(setCustomer(data)),
+  dispatchSetAmount: data => dispatch(setAmount(data)),
 })
 
 export default connect(
