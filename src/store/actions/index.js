@@ -1,11 +1,6 @@
-import { SET_CART, SET_CUSTOMER, SET_AMOUNT } from "../types"
+import { SET_CART, SET_CUSTOMER } from "../types"
 
 // Cart
-export const setAmount = data => ({
-  type: SET_AMOUNT,
-  payload: data,
-})
-
 export const setCart = data => ({
   type: SET_CART,
   payload: data,

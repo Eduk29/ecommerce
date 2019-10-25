@@ -2,13 +2,12 @@
 import React from "react"
 
 // Components
-import InputText from "../InputText/InputText"
 
 // Styles
 import "../../style/components/Table.scss"
 
 const Table = props => {
-  const { columns, products, handleChangeAmount } = props
+  const { columns, products } = props
 
   return (
     <table className="ecommerce__table">
@@ -34,11 +33,7 @@ const Table = props => {
                 id="quantity-column"
                 className="ecommerce__table-body-row-item"
               >
-                <InputText
-                  handleChange={event => handleChangeAmount(event, product)}
-                  id="amount"
-                  value={product.amount}
-                />
+                {product.amount}
               </td>
               <td className="ecommerce__table-body-row-item">
                 R$ {product.item.price}
