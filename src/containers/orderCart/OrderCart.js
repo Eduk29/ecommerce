@@ -64,6 +64,10 @@ const OrderCart = props => {
     props.history.push("/checkout")
   }
 
+  const handleClickReturnButton = () => {
+    props.history.push("/")
+  }
+
   const getSubtotal = () => {
     const { products } = cart
 
@@ -107,16 +111,28 @@ const OrderCart = props => {
     <div className="ecommerce__order-cart-container">
       <div className="ecommerce__order-cart-container-order-summary">
         {displayTable() && (
-          <div className="ecommerce__order-cart-container-order-summary--filled-cart">
-            <h4 className="ecommerce__order-cart-container-order-summary--filled-cart-title">
-              Your products in cart
-            </h4>
-            <Table
-              columns={columns}
-              products={cart.products}
-              handleAmountChange={handleAmountChange}
-            />
-          </div>
+          <>
+            <div className="ecommerce__order-cart-container-order-summary--filled-cart">
+              <h4 className="ecommerce__order-cart-container-order-summary--filled-cart-title">
+                Your products in cart
+              </h4>
+              <Table
+                columns={columns}
+                products={cart.products}
+                handleAmountChange={handleAmountChange}
+              />
+            </div>
+            <div className="ecommerce__order-cart-container-return-button">
+              <Button
+                borderRadius="50"
+                color="primary"
+                handleClick={handleClickReturnButton}
+                label="Keep buying"
+                size="5px 45px"
+                type="button"
+              />
+            </div>
+          </>
         )}
         {!displayTable() && (
           <h4 className="ecommerce__order-cart-container-order-summary--empty-cart">

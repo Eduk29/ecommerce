@@ -32,7 +32,7 @@ const OrderCheckout = props => {
   }
 
   const handleClickFinish = () => {
-    alert("Thanks for using this ecommerce, your journey ends here.")
+    alert("Thank's for using this e-commerce, your journey ends here.")
   }
 
   const getSubtotal = () => {
