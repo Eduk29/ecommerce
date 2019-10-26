@@ -25,32 +25,38 @@ const OrderCart = props => {
     productToUpdate.amount = newAmount
   }
 
+  const removeProductFromCart = (products, productId) => {
+    products.splice(productId - 1, 1)
+  }
+
   const handleAmountChange = (event, product) => {
     const { products } = cart
     let newProductAmount
 
-    if (event.target.value === 0) {
+    if (event.target.value === 0 || event.target.value === "0") {
       if (window.confirm("Do you want to remove this item?")) {
-        console.log("Remove Item")
+        removeProductFromCart(products, product.id)
       } else {
         console.log("Reset amount Item")
       }
     }
 
-    if (event.target.value !== "") {
+    if (
+      event.target.value !== "" &&
+      event.target.value !== 0 &&
+      event.target.value !== "0"
+    ) {
       newProductAmount = +event.target.value
-    }
 
-    updateProductWithNewAmount(products, product.id, newProductAmount)
+      updateProductWithNewAmount(products, product.id, newProductAmount)
+    }
 
     setStateCart({
       ...cart,
       products,
     })
 
-    if (newProductAmount >= 0) {
-      props.dispatchUpdateCart(cart)
-    }
+    props.dispatchUpdateCart(cart)
   }
 
   const handleClickCheckoutButton = () => {
