@@ -59,7 +59,7 @@ const OrderCart = props => {
   }
 
   const handleClickCheckoutButton = () => {
-    console.log("Redirect to Checkout Page: ", props.history.push("/checkout"))
+    props.history.push("/checkout")
   }
 
   const getSubtotal = () => {
