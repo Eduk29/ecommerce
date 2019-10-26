@@ -36,8 +36,6 @@ const OrderCart = props => {
     if (event.target.value === 0 || event.target.value === "0") {
       if (window.confirm("Do you want to remove this item?")) {
         removeProductFromCart(products, product.id)
-      } else {
-        console.log("Reset amount Item")
       }
     }
 
