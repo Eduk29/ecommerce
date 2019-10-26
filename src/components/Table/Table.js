@@ -35,7 +35,7 @@ const Table = props => {
                 className="ecommerce__table-body-row-item"
               >
                 <InputText
-                  id={`${product.item.name}-input`}
+                  id="quantity"
                   handleChange={event => handleAmountChange(event, product)}
                   type="number"
                   value={product.amount}

@@ -4,7 +4,6 @@ import { connect } from "react-redux"
 
 // Components
 import Table from "../../components/Table"
-import CustomersInformation from "../../components/CustomersInformation/CustomersInformation"
 
 // Styles
 import "../../style/containers/OrderCart.scss"
@@ -15,21 +14,9 @@ const columns = ["Product", "Quantity", "Price"]
 const OrderCart = props => {
   const { state } = props
   const [cart, setStateCart] = useState(state.cart)
-  const [customer, setStateCustomer] = useState(state.customer)
 
   const displayTable = () => {
     return cart.products.length > 0
-  }
-
-  const handleChange = event => {
-    const prop = event.target.id.slice(
-      event.target.id.indexOf("-") + 1,
-      event.target.id.length
-    )
-    setStateCustomer({
-      ...customer,
-      [prop]: event.target.value,
-    })
   }
 
   const updateProductWithNewAmount = (products, productId, newAmount) => {
@@ -57,8 +44,43 @@ const OrderCart = props => {
     }
   }
 
-  const handleClick = () => {
-    props.dispatchSetCustomer(customer)
+  const getSubtotal = () => {
+    const { products } = cart
+
+    if (products.length > 0) {
+      return products.reduce((accumulated, current) => {
+        const price = parseFloat(current.item.price)
+        const { amount } = current
+
+        return accumulated + amount * price
+      }, 0)
+    }
+    return 0
+  }
+
+  const getDelivery = () => {
+    const subtotal = Number(getSubtotal())
+
+    if (subtotal < 1000 && subtotal !== 0) {
+      return 23
+    }
+
+    if (subtotal > 1000 && subtotal < 5000) {
+      return 9.99
+    }
+
+    return 0
+  }
+
+  const getTotal = () => {
+    const subtotal = getSubtotal()
+    const delivery = +getDelivery()
+
+    if (getDelivery() === "0.00") {
+      return subtotal
+    }
+
+    return subtotal + delivery
   }
 
   return (
@@ -82,12 +104,20 @@ const OrderCart = props => {
           </h4>
         )}
       </div>
-      <div className="ecommerce__order-cart-container-customer-information">
-        <CustomersInformation
-          customer={customer}
-          handleChange={handleChange}
-          handleClick={handleClick}
-        />
+      <div className="ecommerce__order-cart-container-summary-information">
+        <div className="ecommerce__order-cart-container-summary-information-subtotal">
+          <span>Subtotal</span>
+          <span>{`R$ ${getSubtotal().toFixed(2)}`}</span>
+        </div>
+        <div className="ecommerce__order-cart-container-summary-information-delivery">
+          <span>Delivery</span>
+          <span>{`R$ ${getDelivery().toFixed(2)}`}</span>
+        </div>
+        <hr />
+        <div className="ecommerce__order-cart-container-summary-information-total">
+          <span>Est. Total</span>
+          <span>{`R$ ${getTotal().toFixed(2)}`}</span>
+        </div>
       </div>
     </div>
   )
