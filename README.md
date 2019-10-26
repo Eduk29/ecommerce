@@ -3,7 +3,7 @@
 
 This project is based on the study of [React](https://reactjs.org/), so it may contain some errors. Will be a pleasure receive your code review, suggestions and/or tips. :raised_hands:
 
-This project use some patterns like [BEM](http://getbem.com/), [ITCSS](https://speakerdeck.com/dafed/managing-css-projects-with-itcss),[Semantic Commit Messages](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) and [Git flow](https://nvie.com/posts/a-successful-git-branching-model/).
+This project use some patterns like [BEM](http://getbem.com/), [ITCSS](https://speakerdeck.com/dafed/managing-css-projects-with-itcss), [Semantic Commit Messages](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716) and [Git flow](https://nvie.com/posts/a-successful-git-branching-model/).
 
 If you want a live version [click here](https://ecommerce-prod.netlify.com/). But if you want to run the application in your pc, follow the Installation and Start Application section.
 
