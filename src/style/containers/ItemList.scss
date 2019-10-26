@@ -2,9 +2,24 @@
 
 .ecommerce__item-list-container {
   display: flex;
-  width: 1060px;
-  margin: auto;
+  flex-flow: column;
+  margin: 20px 0px;
+  align-items: center;
+}
+
+.ecommerce__item-list-container-filter-panel {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 1000px;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.ecommerce__item-list-container-results {
+  display: flex;
   flex-wrap: wrap;
+  margin: auto;
+  width: 1060px;
 }
 
 .ecommerce_item-list--item {

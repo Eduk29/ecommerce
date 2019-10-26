@@ -1,0 +1,1 @@
+export { getAll } from "./BrandService"

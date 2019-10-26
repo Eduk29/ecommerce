@@ -4,24 +4,25 @@ import { connect } from "react-redux"
 
 // Components
 import Navbar from "../../components/Navbar"
-import ItemList from "../../containers/ItemList/ItemList"
 
 // Style
-import "../../style/pages/Home.scss"
+import "../../style/pages/Checkout.scss"
+import OrderCheckout from "../../containers/orderCheckout/OrderCheckout"
 
-const Home = ({ ...props }) => {
+const Checkout = ({ ...props }) => {
   const { cart } = props
   const quantity = cart.products.reduce(
     (acc, product) => acc + product.amount,
     0
   )
+
   return (
-    <div className="ecommerce__home">
-      <header className="ecommerce__home-header">
+    <div className="ecommerce__checkout">
+      <header className="ecommerce__checkout-header">
         <Navbar badgeData={quantity} />
       </header>
-      <div className="ecommerce__home-main">
-        <ItemList />
+      <div className="ecommerce__checkout-main">
+        <OrderCheckout />
       </div>
     </div>
   )
@@ -34,4 +35,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   undefined
-)(Home)
+)(Checkout)

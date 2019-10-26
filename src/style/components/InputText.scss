@@ -1,0 +1,23 @@
+@import "../settings/base";
+
+.ecommerce__input-text,
+.ecommerce__input-text-label,
+.ecommerce__input-text-input {
+  width: 100%;
+}
+
+.ecommerce__input-text-label {
+  margin: 10px 0px;
+}
+
+.ecommerce__input-text-input {
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  border-color: $text-black;
+  border-width: 1px;
+}
+
+#input-amount {
+  text-align: center;
+}

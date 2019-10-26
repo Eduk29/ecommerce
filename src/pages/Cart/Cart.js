@@ -1,20 +1,38 @@
 // React
 import React from "react"
+import { connect } from "react-redux"
 
 // Components
 import Navbar from "../../components/Navbar"
+import OrderCart from "../../containers/orderCart/OrderCart"
 
-const Cart = () => {
+// Style
+import "../../style/pages/Cart.scss"
+
+const Cart = ({ ...props }) => {
+  const { cart } = props
+  const quantity = cart.products.reduce(
+    (acc, product) => acc + product.amount,
+    0
+  )
+
   return (
     <div className="ecommerce__cart">
-      <div className="ecommerce__cart-navbar">
-        <Navbar />
-      </div>
+      <header className="ecommerce__cart-header">
+        <Navbar badgeData={quantity} />
+      </header>
       <div className="ecommerce__cart-main">
-        <h1> Page Cart </h1>
+        <OrderCart />
       </div>
     </div>
   )
 }
 
-export default Cart
+const mapStateToProps = state => ({
+  cart: state.cart,
+})
+
+export default connect(
+  mapStateToProps,
+  undefined
+)(Cart)

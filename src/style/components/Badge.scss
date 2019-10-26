@@ -1,0 +1,22 @@
+@import "../settings/base";
+
+.ecommerce__badge-label {
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.primary {
+  background: $color-primary-base;
+  color: $text-white;
+}
+
+.secondary {
+  background: $color-secondary-base;
+  color: $text-white;
+}
+
+.default {
+  background: #e0e0e0;
+  color: $text-black;
+}

@@ -1,0 +1,8 @@
+// Cart
+const SET_CART = "SET_CART"
+const UPDATE_CART = "UPDATE_CART"
+
+// Customer
+const SET_CUSTOMER = "SET_CUSTOMER"
+
+export { SET_CART, UPDATE_CART, SET_CUSTOMER }

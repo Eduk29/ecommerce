@@ -1,0 +1,45 @@
+@import "../settings/base";
+
+.ecommerce__container-customers-information-title {
+  text-align: center;
+}
+
+.ecommerce__container-customers-information-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0px;
+}
+
+.ecommerce__container-customers-information-name-input {
+  width: 100%;
+}
+
+.ecommerce__container-customers-information-address-input {
+  padding: 0px 20px 0px 0px;
+  width: 80%;
+}
+
+.ecommerce__container-customers-information-number-input {
+  width: 20%;
+}
+
+.ecommerce__container-customers-information-zip-code-input {
+  width: 40%;
+  padding: 0px 20px 0px 0px;
+}
+
+.ecommerce__container-customers-information-state-input,
+.ecommerce__container-customers-information-province-input {
+  width: 30%;
+}
+
+.ecommerce__container-customers-information-state-input {
+  padding: 0px 20px 0px 0px;
+}
+
+.ecommerce__container-customers-information-button {
+  margin-top: 50px;
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+}

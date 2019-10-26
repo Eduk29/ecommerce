@@ -1,0 +1,42 @@
+@import "../settings/base";
+
+.ecommerce__table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ecommerce__table-header-row {
+  border-bottom: 2px solid black;
+}
+
+.ecommerce__table-header-row-item {
+  border-left: 1px solid black;
+}
+
+.ecommerce__table-body-row-item {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.ecommerce__table-body-row-item--first-column {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  text-align: start;
+}
+
+.ecommerce__navbar-link-button {
+  font-size: 20px;
+}
+
+.ecommerce__table-body {
+  text-align: center;
+}
+
+#quantity-column {
+  width: 10%;
+}
+
+#input-quantity {
+  text-align: center;
+}

@@ -1,15 +1,10 @@
 // React
 import React from "react"
 
-// Font Awesome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPlus } from "@fortawesome/free-solid-svg-icons"
-
 // Styles
 import "../../style/components/ProductCard.scss"
-import Button from "../Button/Button"
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, children }) => {
   return (
     <div className="ecommerce__product-card">
       <img
@@ -26,15 +21,7 @@ const ProductCard = ({ product }) => {
           R$ {product.price}
         </div>
       </div>
-      <div className="ecommerce__product-card-footer">
-        <Button
-          label="Add to Cart"
-          icon={<FontAwesomeIcon icon={faPlus} size="sm" />}
-          iconPosition="left"
-          borderRadius={25}
-          color="default"
-        />
-      </div>
+      <div className="ecommerce__product-card-footer">{children}</div>
     </div>
   )
 }

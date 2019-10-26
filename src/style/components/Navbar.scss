@@ -6,7 +6,7 @@
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 25px;
+  padding: 5px 25px;
   height: 60px;
   background-color: $color-primary-light;
   color: $text-white;
@@ -23,10 +23,11 @@
 }
 
 .ecommerce__navbar-link-button {
-  font-size: 20px
+  font-size: 20px;
 }
 
-.ecommerce__navbar-cart {
+.ecommerce__navbar-cart-button {
+  display: flex;
   button {
     background-color: transparent;
     border: none;
@@ -42,4 +43,10 @@
   button:hover {
     background-color: rgba(0, 0, 0, 0.08);
   }
+}
+
+.ecommerce__navbar-badge {
+  position: absolute;
+  top: -10px;
+  right: 15px;
 }

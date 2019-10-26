@@ -1,1 +1,1 @@
-export { getAll } from "./ProductService"
+export { getAll, getAllByFilter } from "./ProductService"
