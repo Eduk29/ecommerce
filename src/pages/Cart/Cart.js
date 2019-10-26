@@ -4,7 +4,7 @@ import { connect } from "react-redux"
 
 // Components
 import Navbar from "../../components/Navbar"
-import OrderCart from "../../containers/orderCart/orderCart"
+import OrderCart from "../../containers/orderCart/OrderCart"
 
 // Style
 import "../../style/pages/Cart.scss"
