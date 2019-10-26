@@ -5,11 +5,13 @@ import { withRouter } from "react-router-dom"
 
 // Components
 import Table from "../../components/Table"
+import Button from "../../components/Button/Button"
 
 // Styles
 import "../../style/containers/OrderCart.scss"
+
+// Actions
 import { setCustomer, updateCart } from "../../store/actions"
-import Button from "../../components/Button/Button"
 
 const columns = ["Product", "Quantity", "Price"]
 

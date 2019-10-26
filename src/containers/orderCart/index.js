@@ -1,1 +1,1 @@
-export { default } from "./orderCart"
+export { default } from "./OrderCart"
