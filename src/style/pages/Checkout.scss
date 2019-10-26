@@ -1,0 +1,17 @@
+@import "../settings/base";
+
+.ecommerce__checkout {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.ecommerce__checkout-header {
+  width: 100%;
+}
+
+.ecommerce__checkout-main {
+  max-width: 1280px;
+  margin: 10px 20px;
+  width: 100%;
+}

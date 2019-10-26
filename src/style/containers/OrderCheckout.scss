@@ -1,0 +1,20 @@
+@import "../settings/base";
+
+.ecommerce__order-checkout-container {
+  display: flex;
+  flex-flow: row;
+  margin: 20px;
+}
+
+.ecommerce__order-checkout-container-customer {
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  margin-right: 2%;
+  padding: 15px;
+  width: 64%;
+}
+
+.ecommerce__order-checkout-container-summary {
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  width: 34%;
+}

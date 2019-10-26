@@ -11,9 +11,9 @@ import "../../style/components/CustomersInformation.scss"
 const CustomersInformation = ({ customer, handleChange, handleClick }) => {
   return (
     <div className="ecommerce__container-customers-information">
-      <h4 className="ecommerce__container-customers-information-title">
+      <h2 className="ecommerce__container-customers-information-title">
         Delivery Information
-      </h4>
+      </h2>
       <div className="ecommerce__container-customers-information-name-input">
         <InputText
           handleChange={handleChange}
@@ -68,9 +68,9 @@ const CustomersInformation = ({ customer, handleChange, handleClick }) => {
       </div>
       <div className="ecommerce__container-customers-information-button">
         <Button
-          handleClick={handleClick}
           color="primary"
-          label="Save"
+          handleClick={handleClick}
+          label="Continue"
           size="5px 45px"
           type="button"
         />
