@@ -1,6 +1,7 @@
 // React
 import React, { useState } from "react"
 import { connect } from "react-redux"
+import { withRouter } from "react-router-dom"
 
 // Components
 import Table from "../../components/Table"
@@ -58,7 +59,7 @@ const OrderCart = props => {
   }
 
   const handleClickCheckoutButton = () => {
-    console.log("Redirect to Checkout Page")
+    console.log("Redirect to Checkout Page: ", props.history.push("/checkout"))
   }
 
   const getSubtotal = () => {
@@ -163,4 +164,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(OrderCart)
+)(withRouter(OrderCart))
