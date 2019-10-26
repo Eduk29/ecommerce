@@ -11,19 +11,20 @@ const InputText = ({
   handleChange,
   readonly = false,
   required = false,
+  type = "text",
   value = "",
 }) => {
   return (
     <div className="ecommerce__input-text">
       <div className="ecommerce__input-text-label">{label}</div>
       <input
-        id={`input-${id}`}
         className="ecommerce__input-text-input"
         disabled={disabled}
+        id={`input-${id}`}
         onChange={handleChange}
         readOnly={readonly}
         required={required}
-        type="text"
+        type={type}
         value={value}
       />
     </div>
