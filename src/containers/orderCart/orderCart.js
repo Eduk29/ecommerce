@@ -8,6 +8,7 @@ import Table from "../../components/Table"
 // Styles
 import "../../style/containers/OrderCart.scss"
 import { setCustomer, updateCart } from "../../store/actions"
+import Button from "../../components/Button/Button"
 
 const columns = ["Product", "Quantity", "Price"]
 
@@ -28,6 +29,14 @@ const OrderCart = props => {
     const { products } = cart
     let newProductAmount
 
+    if (event.target.value === 0) {
+      if (window.confirm("Do you want to remove this item?")) {
+        console.log("Remove Item")
+      } else {
+        console.log("Reset amount Item")
+      }
+    }
+
     if (event.target.value !== "") {
       newProductAmount = +event.target.value
     }
@@ -42,6 +51,10 @@ const OrderCart = props => {
     if (newProductAmount >= 0) {
       props.dispatchUpdateCart(cart)
     }
+  }
+
+  const handleClickCheckoutButton = () => {
+    console.log("Redirect to Checkout Page")
   }
 
   const getSubtotal = () => {
@@ -117,6 +130,17 @@ const OrderCart = props => {
         <div className="ecommerce__order-cart-container-summary-information-total">
           <span>Est. Total</span>
           <span>{`R$ ${getTotal().toFixed(2)}`}</span>
+        </div>
+        <div className="ecommerce__order-cart-container-summary-checkout-button">
+          <Button
+            borderRadius="50"
+            disabled={cart.products.length === 0}
+            color="primary"
+            handleClick={handleClickCheckoutButton}
+            label="Checkout"
+            size="5px 45px"
+            type="button"
+          />
         </div>
       </div>
     </div>

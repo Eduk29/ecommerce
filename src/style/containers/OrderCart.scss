@@ -54,3 +54,10 @@
     $title-font-weigth
   );
 }
+
+.ecommerce__order-cart-container-summary-checkout-button {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end;
+  margin-top: 50px;
+}
